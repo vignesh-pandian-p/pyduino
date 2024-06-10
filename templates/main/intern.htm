@@ -1,0 +1,43 @@
+{% extends "base.htm" %}
+{% block title %}
+Intern | TECKO
+{% endblock title %}
+{% block content %}
+{% include 'navbar/navbar.htm' %}
+
+<section class="container">
+    <h1 class="display-4 text-center mt-5" style="text-shadow: 0px 0px 10px rgba(158, 234, 248, 0.5) !important;">LOGIN TO YOUR ACCOUNT</h1>
+
+    <form action="/internlogin" method="POST" class="p-3 mt-4 mb-4 rounded" style="box-shadow: 0px 0px 100px rgba(0,0,0,0.9);">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 my-2">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your E-Mail">
+            </div>
+            <div  class="col-md-6 col-sm-6 col-xs-6 col-lg-6 my-2">
+                <label for="domain" >Domain</label>
+                <select name="domain" id="domain" class="form-control">
+                    <option value="" disabled selected>Select your Domain</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="AI">AI</option>
+                    <option value="IoT Development">IoT Development</option>
+                    <option value="UI-UX Design">UI-UX Design</option>
+                    <option value="Mobile Application">Mobile Application</option>
+                </select>   
+            </div>
+            
+            <div class="text-center mt-3">
+                <input type="submit" value="Login" class="btn btnbg w-25">
+            </div>
+        </div>
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+    </form>
+    <div class="text-center mt-3">
+        <a href="/internregister" class="btn btn-secondary w-25">Register</a>
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Inside Input</title>
+    <style>
+        .input-group {
+            position: relative;
+            display: inline-block;
+        }
+
+        input[type="text"] {
+            padding-right: 30px; /* Adjust this value to leave space for the button */
+        }
+
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="input-group">
+        <input type="text" placeholder="Type here">
+        <button type="button">Click</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "base.htm" %}
+{% block title %}
+Contact | TECKO
+{% endblock title %}
+{% block content %}
+{% include 'navbar/navbar.htm' %}
+
+<section class="container">
+    <h1 class="display-4 text-center mt-5" style="text-shadow: 0px 0px 10px rgba(158, 234, 248, 0.5) !important;">GET SUPPORT - CONTACT US</h1>
+    
+    <form action="/sendMail" method="POST" class="p-3 mt-4 mb-4 rounded" style="box-shadow: 0px 0px 100px rgba(0,0,0,0.9);">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 my-2"><label for="fullname">Fullname</label><input type="text" name="fullname" id="fullname" class="form form-control"   placeholder="Enter your Fullname"></div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 my-2"><label for="email">E-mail</label><input type="text" name="email" id="email" value="{{profileValue.email}}" class="form form-control"  placeholder="Enter your E-Mail"></div>
+            <div class="col my-2">
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" cols="30" rows="5" class="form form-control" placeholder="Enter Your Message"></textarea>
+            </div>
+            <div class="text-center mt-3">
+                <input type="submit" value="Get Support" class="btn btnbg w-25">
+            </div>
+        </div>
+    </form>
+</section>
+
+
+
+{% endblock content %}

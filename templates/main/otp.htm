@@ -1,0 +1,29 @@
+{% extends "base.htm" %}
+{% block title %}
+OTP | PYDUINO
+{% endblock title %}
+{% block content %}
+{% include 'navbar/authNavbar.htm' %}
+
+<section class="container col-md-4 col-sm-4 col-xs-4 col-lg-4 p-3 rounded auth" style="margin-top: 100px;border:3px solid rgba(158, 234, 248, 0.5) !important;box-shadow: 0px 0px 10px rgba(158, 234, 248, 0.5) !important; ">
+    <h1 class="text-center" style="text-shadow: 0px 0px 10px rgba(158, 234, 248, 0.5) !important;">OTP VERIFICATION !</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <div class="form-group my-3">
+            <label for="username">OTP</label>
+            <input type="text" name="username" class="form form-control" placeholder="Enter Your Username" id="username">
+        </div>
+
+        <div class="row  justify-content-center mt-3 mb-2">
+            <input type="submit" value="Verify Me" class="btn btnbg w-25">
+
+        </div> 
+    </form>
+
+
+</section>
+
+
+
+{% endblock content %}

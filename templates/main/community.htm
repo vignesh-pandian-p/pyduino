@@ -1,0 +1,31 @@
+{% extends "base.htm" %}
+
+
+{% block title %}
+Community Chat | PYDUINO
+{% endblock title %}
+{% block content %}
+{% include 'navbar/navbar.htm' %}
+<section class="container mt-5 p-3 rounded" style="box-shadow:0px 0px 10px rgba(158, 234, 248, 1); overflow-y:auto;">
+    <h1 class="text-center fw-bold " style="text-shadow:0px 0px 10px rgba(158, 234, 248, 0.5);">COMMUNITY CHAT FOR GUIDANCE</h1><hr>
+    <div class="row justify-content-center" style="min-height: 400px; max-height:400px; " id="messageContainer">
+        {% if data %}
+            {% for i in data %}
+                <p><b class="text-white">{{i.username}}</b> : {{i.message}}</p>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+
+
+</section>
+<section class="container mt-3">
+    <div class="input-group mb-3">
+        <input type="text" name="message" id="message" class="form-control" placeholder="Type here">
+        <button class="btn btnbg" type="button" onclick="sendMessage()">Send <i class="fa fa-arrow-right text-dark" aria-hidden="true"></i></button>
+    
+    </div>
+</section>
+
+{% endblock content %}
