@@ -4,9 +4,8 @@ Intern | TECKO
 {% endblock title %}
 {% block content %}
 {% include 'navbar/navbar.htm' %}
-
 <section class="container">
-    <h1 class="display-4 text-center mt-5" style="text-shadow: 0px 0px 10px rgba(158, 234, 248, 0.5) !important;">Regester For Internship</h1>
+    <h1 class="display-4 text-center mt-5" style="text-shadow: 0px 0px 10px rgba(158, 234, 248, 0.5) !important;">Register For Internship</h1>
 
     <form action="/internship_application" method="POST" class="p-3 mt-4 mb-4 rounded" style="box-shadow: 0px 0px 100px rgba(0,0,0,0.9);">
         {% csrf_token %}
